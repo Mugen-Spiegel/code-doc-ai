@@ -75,7 +75,7 @@ module CodeDocAI
   # ✅ Generate an read.md file listing all .md files in app_doc/
   def generate_index
     output_dir = File.join(__dir__, "app_doc")
-    index_file = File.join(__dir__, "read.md")
+    index_file = File.join(__dir__, "README.md")
 
     lines = ["# 📚 Documentation Index\n\n"]
 

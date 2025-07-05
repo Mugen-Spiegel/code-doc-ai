@@ -1,28 +1,31 @@
-# Overview
-The `Post` class represents a post object with attributes such as title, body, and author. Its purpose is to create instances of posts with these attributes.
+# Post Class
+
+The Post class represents a post object with attributes such as title, body, and author.
 
 ## initialize method
-The `initialize` method is a special method in Ruby that is called when a new object of the class is created. It takes in three parameters: `title`, `body`, and `author`, and assigns them to instance variables.
+The `initialize` method is a constructor for the Post class. It takes three keyword arguments `title`, `body`, and `author` and initializes instance variables `@title`, `@body`, and `@author`.
 
 ```ruby
 def initialize(title:, body:, author:)
-  @title = title
-  @body = body
-  @author = author
+    @title = title
+    @body = body
+    @author = author
 end
 ```
 
-- `title:`: The title of the post.
-- `body:`: The body content of the post.
-- `author:`: The author of the post.
+- `title:`: Represents the title of the post.
+- `body:`: Represents the body content of the post.
+- `author:`: Represents the author of the post.
 
 ## attr_reader
-The `attr_reader` method is a shortcut in Ruby for defining getter methods for instance variables. It creates a method for each symbol passed to it that returns the value of the corresponding instance variable.
+The `attr_reader` method is a Ruby shortcut for defining getter methods for instance variables. In this case, it creates getter methods for `title`, `body`, and `author`.
 
 ```ruby
 attr_reader :title, :body, :author
 ```
 
-- `:title`: Creates a method `title` that returns the value of the `@title` instance variable.
-- `:body`: Creates a method `body` that returns the value of the `@body` instance variable.
-- `:author`: Creates a method `author` that returns the value of the `@author` instance variable.
+- `title`: Allows access to the `@title` instance variable.
+- `body`: Allows access to the `@body` instance variable.
+- `author`: Allows access to the `@author` instance variable.
+
+Overall, the Post class encapsulates data related to a post, providing a convenient way to access and manipulate the post attributes.
