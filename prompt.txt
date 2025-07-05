@@ -1,0 +1,16 @@
+Explain the following Ruby class in Markdown format.
+
+Begin with a short overview of the class and its purpose.
+
+Explain each part from top to bottom.
+
+For every method or line of significance, write a brief explanation above the code snippet.
+
+Use headings like ## initialize method or ## method_name to structure the explanation.
+
+Include code snippets in proper Ruby fenced code blocks.
+
+Format the explanation so it looks like technical documentation.
+
+Here's the Ruby class you should explain:
+
