@@ -2,12 +2,14 @@ require 'dotenv/load'
 require 'httparty'
 require 'json'
 require 'fileutils'
+require 'find'
 
 module CodeDocAI
   module_function
 
   def generate(path = "./app")
     read_path(path)
+    generate_index
   end
 
   # Dispatcher: decides whether it's a file or directory
@@ -26,7 +28,6 @@ module CodeDocAI
   end
 
   # Handles a single Ruby file
-  # `base_path` is used to calculate the relative path
   def read_single_file(file_path, base_path)
     puts "\n📄 Reading: #{file_path}"
 
@@ -69,6 +70,26 @@ module CodeDocAI
 
     File.write(File.join(__dir__, target_md_path), markdown)
     puts "✅ Markdown saved to: #{target_md_path}"
+  end
+
+  # ✅ Generate an read.md file listing all .md files in app_doc/
+  def generate_index
+    output_dir = File.join(__dir__, "app_doc")
+    index_file = File.join(__dir__, "read.md")
+
+    lines = ["# 📚 Documentation Index\n\n"]
+
+    Find.find(output_dir) do |path|
+      next unless File.file?(path)
+      next if path.end_with?("read.md")
+      next unless File.extname(path) == ".md"
+
+      relative_path = path.sub("#{output_dir}/", '')
+      lines << "- [#{relative_path}](#{relative_path})"
+    end
+
+    File.write(index_file, lines.join("\n"))
+    puts "✅ read.md generated at: #{index_file}"
   end
 end
 

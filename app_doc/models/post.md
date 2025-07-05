@@ -1,8 +1,8 @@
-# Class: Post
-This Ruby class represents a Post object with attributes like title, body, and author. The purpose of this class is to create instances of posts with the specified attributes.
+# Overview
+The `Post` class represents a post object with attributes such as title, body, and author. Its purpose is to create instances of posts with these attributes.
 
 ## initialize method
-The `initialize` method is a constructor method that gets called when a new Post object is created. It takes in three arguments - `title`, `body`, and `author` - and initializes the instance variables `@title`, `@body`, and `@author` with the values provided.
+The `initialize` method is a special method in Ruby that is called when a new object of the class is created. It takes in three parameters: `title`, `body`, and `author`, and assigns them to instance variables.
 
 ```ruby
 def initialize(title:, body:, author:)
@@ -12,13 +12,17 @@ def initialize(title:, body:, author:)
 end
 ```
 
-In this method, the `title`, `body`, and `author` arguments are required keyword arguments, ensuring that the necessary attributes are provided when creating a new Post object.
+- `title:`: The title of the post.
+- `body:`: The body content of the post.
+- `author:`: The author of the post.
 
 ## attr_reader
-The `attr_reader` method is a shorthand way of defining getter methods for instance variables. In this case, it creates reader methods for `title`, `body`, and `author`, allowing external code to access these attributes of a Post object.
+The `attr_reader` method is a shortcut in Ruby for defining getter methods for instance variables. It creates a method for each symbol passed to it that returns the value of the corresponding instance variable.
 
 ```ruby
 attr_reader :title, :body, :author
 ```
 
-By using `attr_reader`, we can retrieve the values of `title`, `body`, and `author` without directly accessing the instance variables, promoting encapsulation and providing a clean interface for interacting with Post objects.
+- `:title`: Creates a method `title` that returns the value of the `@title` instance variable.
+- `:body`: Creates a method `body` that returns the value of the `@body` instance variable.
+- `:author`: Creates a method `author` that returns the value of the `@author` instance variable.

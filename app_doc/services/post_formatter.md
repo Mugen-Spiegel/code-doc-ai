@@ -1,8 +1,9 @@
-## Overview
-The `PostFormatter` class is a Ruby class that is designed to format post objects. It has two methods: `preview` which returns the first 100 characters of the post body followed by an ellipsis, and `uppercase_title` which returns the post title in all uppercase letters.
+# PostFormatter Class
+
+The `PostFormatter` class is designed to format post objects by providing methods to generate a preview of the post body and convert the post title to uppercase.
 
 ## initialize method
-The `initialize` method is the constructor for the `PostFormatter` class. It takes a `post` object as an argument and assigns it to an instance variable `@post`.
+The `initialize` method is a constructor method that initializes a new instance of the `PostFormatter` class with a post object.
 
 ```ruby
 def initialize(post)
@@ -11,7 +12,7 @@ end
 ```
 
 ## preview method
-The `preview` method extracts the first 100 characters from the `body` attribute of the `post` object and appends an ellipsis to it. It then returns the formatted preview.
+The `preview` method extracts the first 100 characters of the post body and appends ellipsis to create a preview of the post.
 
 ```ruby
 def preview
@@ -20,7 +21,7 @@ end
 ```
 
 ## uppercase_title method
-The `uppercase_title` method converts the `title` attribute of the `post` object to uppercase letters and returns the result.
+The `uppercase_title` method converts the title of the post to uppercase.
 
 ```ruby
 def uppercase_title

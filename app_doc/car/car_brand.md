@@ -1,10 +1,8 @@
-# CarBrand Class
-
-The CarBrand class is a subclass of the Car class and is used to represent a specific car brand. It includes attributes for the brand name and country of origin.
+## Overview
+The `CarBrand` class is a subclass of `Car` and is used to represent a specific car brand. It includes attributes for the brand name and country of origin, as well as methods to display the full information about the brand.
 
 ## initialize method
-
-The initialize method is a special method in Ruby that is called when a new object of the class is created. In this case, the initialize method takes in arguments for the brand name, country, and any additional car attributes. It then calls the initialize method of the parent class (Car) using the super keyword and initializes the brand_name and country attributes of the CarBrand class.
+The `initialize` method is used to create a new instance of the `CarBrand` class. It takes in parameters for the brand name, country, and any additional car attributes. It then calls the `initialize` method of the superclass `Car` to initialize the inherited attributes.
 
 ```ruby
 def initialize(brand_name:, country:, **car_attrs)
@@ -15,8 +13,7 @@ end
 ```
 
 ## full_info method
-
-The full_info method is a custom method defined in the CarBrand class that returns a string containing the brand name, country, and other car attributes. It calls the info method from the parent class (Car) to include additional car information.
+The `full_info` method returns a string that includes the brand name, country of origin, and additional information about the car. It calls the `info` method from the superclass `Car` to get the additional information.
 
 ```ruby
 def full_info

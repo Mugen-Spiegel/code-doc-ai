@@ -1,10 +1,8 @@
 # PostPresenter Class
 
-The PostPresenter class is responsible for presenting a post in a specific format. It takes a post object as input and uses a PostFormatter service to format the post data.
+The `PostPresenter` class is responsible for presenting a post in a specific format. It takes a `post` object as input and formats it using a `PostFormatter` service.
 
 ## initialize method
-
-In the initialize method, the PostPresenter class takes a post object as an argument and assigns it to an instance variable `@post`. It also initializes a PostFormatter object with the post object and assigns it to the instance variable `@formatter`.
 
 ```ruby
 def initialize(post)
@@ -13,9 +11,11 @@ def initialize(post)
 end
 ```
 
-## render method
+- The `initialize` method is a constructor for the `PostPresenter` class.
+- It takes a `post` object as a parameter and sets it as an instance variable `@post`.
+- It initializes a `PostFormatter` object with the `post` parameter and assigns it to an instance variable `@formatter`.
 
-The render method generates and returns a formatted string representing the post. It includes the uppercase title of the post, the author, and a preview of the post content.
+## render method
 
 ```ruby
 def render
@@ -28,4 +28,8 @@ def render
 end
 ```
 
-Overall, the PostPresenter class encapsulates the logic for presenting a post in a specific format, utilizing a PostFormatter service to format the post data.
+- The `render` method generates a formatted output of the post.
+- It uses string interpolation to include the uppercase title of the post, the author, and a preview of the post content.
+- The `@formatter.uppercase_title` method is called to get the post title in uppercase.
+- The `@post.author` is used to get the author of the post.
+- The `@formatter.preview` method is called to get a preview of the post content.
