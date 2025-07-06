@@ -81,15 +81,16 @@ module CodeDocAI
 
     Find.find(output_dir) do |path|
       next unless File.file?(path)
-      next if path.end_with?("read.md")
+      next if File.basename(path).downcase == "readme.md"
       next unless File.extname(path) == ".md"
 
-      relative_path = path.sub("#{output_dir}/", '')
-      lines << "- [#{relative_path}](#{relative_path})"
+      # Build link relative to project root
+      relative_path = path.sub("#{__dir__}/", '')
+      lines << "- [#{relative_path.sub('app_doc/', '')}](#{relative_path})"
     end
 
     File.write(index_file, lines.join("\n"))
-    puts "✅ read.md generated at: #{index_file}"
+    puts "✅ README.md generated at: #{index_file}"
   end
 end
 
